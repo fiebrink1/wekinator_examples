@@ -1,0 +1,32 @@
+Metadata-Version: 1.1
+Name: pyOSC
+Version: 0.3.5b-5294
+Summary: Simple OpenSoundControl module in Pure Python
+Home-page: http://trac.v2.nl/wiki/pyOSC
+Author: Stock
+Author-email: stock@v2.nl
+License: GNU Lesser General Public License
+Download-URL: http://trac.v2.nl/wiki/pyOSC
+Description: Simple OpenSoundControl module in Pure Python. Replaces the 'SimpleOSC' module.
+        This implementation is intended to still be 'Simple' to the user, but much more complete
+        (with OSCServer & OSCClient classes) and much more powerful
+        (the OSCMultiClient supports subscriptions & message-filtering,
+        OSCMessage & OSCBundle are now proper container-types)
+        This is a 'Pure Python' implementation, intended to be simple and transparent.
+        If you ar looking for a FAST OSC-implementaion, try the 'pyliblo' package
+Keywords: OSC,OpenSoundControl
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Artistic Software
+Classifier: Topic :: Communications
+Classifier: Topic :: Other/Nonlisted Topic
+Classifier: Topic :: Scientific/Engineering :: Human Machine Interfaces
+Classifier: Topic :: Scientific/Engineering :: Interface Engine/Protocol Translator
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Networking
+Obsoletes: SimpleOSC
