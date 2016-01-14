@@ -1,0 +1,1 @@
+To run this example, either A) put this folder in the directory apps/myApps/ in your OpenFrameworks distribution, or B) use the oF project builder to build a project that uses the ofxOsc addon, and copy the contents of this src/ folder into the src/ folder of your new project.
