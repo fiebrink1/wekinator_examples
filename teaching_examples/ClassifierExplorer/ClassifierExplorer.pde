@@ -139,7 +139,8 @@ void drawText() {
   textFont(f2);
 
   if (isRecording) {
-    text("Recording w/ class=" + currentClass + " \n(press number to change)", 90, 20);
+    text("Recording w/ class=" + currentClass, 90, 15);
+    text("press number to change)", 90, 28);
   } else {
     text("Testing", 90, 20);    
   }
