@@ -1,6 +1,4 @@
 // Created by Rebecca Fiebrink 2015
-//Doing some weird stuff with decision trees: everything a bit to the right...
-//Goes away in non-fast mode
 
 import controlP5.*;
 import oscP5.*;
