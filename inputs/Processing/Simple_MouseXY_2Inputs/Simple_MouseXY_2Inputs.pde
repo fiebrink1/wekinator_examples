@@ -9,10 +9,15 @@ import netP5.*;
 OscP5 oscP5;
 NetAddress dest;
 
+PFont f;
+
 void setup() {
- // colorMode(HSB);
+  f = createFont("Courier", 16);
+  textFont(f);
+
   size(640, 480, P2D);
   noStroke();
+  smooth();
   
   
   /* start oscP5, listening for incoming messages at port 12000 */
@@ -28,8 +33,8 @@ void draw() {
   if(frameCount % 2 == 0) {
     sendOsc();
   }
-  text("Sending mouse x and y position (2 inputs) to Wekinator\nUsing message /wek/inputs, to port 6448", 10, 10);
-  text("x=" + mouseX + ", y=" + mouseY, 10, 50);
+  text("Continuously sends mouse x and y position (2 inputs) to Wekinator\nUsing message /wek/inputs, to port 6448", 10, 30);
+  text("x=" + mouseX + ", y=" + mouseY, 10, 80);
 }
 
 void sendOsc() {
