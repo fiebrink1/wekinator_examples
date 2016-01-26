@@ -11,7 +11,7 @@ public class Example {
       this.y = y;
       this.isTesting = isTesting;
       
-      a = (isTesting ? 100 : 255);
+      a = (isTesting ? 130 : 255);
       
      //Set color according to class
      if (c == 1) {

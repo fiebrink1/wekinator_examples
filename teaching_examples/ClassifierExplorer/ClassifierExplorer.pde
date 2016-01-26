@@ -139,13 +139,17 @@ void drawText() {
   textFont(f2);
 
   if (isRecording) {
-    text("Recording w/ class=" + currentClass, 90, 15);
-    text("press number to change)", 90, 28);
+    text("Recording w/ class=" + currentClass, 140, 15);
+    text("(Press number key to change)", 140, 28);
   } else {
-    text("Testing", 90, 20);    
+    text("Testing", 140, 20);    
   }
   
   textFont(f2);
+  text("Run with 2 inputs,", 430, 15);
+  text("1 classifier output", 430, 28);
+  
+  
   text("Current position:", 10, height-100);
   textFont(f);
   text("(" + mouseX + "," + mouseY + ")", 10, height-80);
@@ -275,7 +279,10 @@ public int getClassValue(OscMessage theOscMessage) {
 } 
 
 void drawDecision() {
-  //println("DRAWING DECISION");
+      isWaitingSingle = false;
+      errMsg = "";
+  
+    //println("DRAWING DECISION");
     readyForNextDecisionLine = false;
     lastYLine += spacing;
     isDrawingBoundaries = true;
@@ -297,6 +304,8 @@ void getNextBoundaryTester() {
 }
 
 void buttonTrain() {
+    isWaitingSingle = false;
+      errMsg = "";
    wp.train(); 
 }
 
@@ -306,7 +315,7 @@ void updateButtonVisibility(boolean rec) {
       cp5.getController("drawDecision").setVisible(false);
       cp5.getController("buttonClearTest").setVisible(false);
       cp5.getController("buttonClearTrain").setVisible(true);
-      cp5.getController("buttonTrain").setVisible(true);
+     // cp5.getController("buttonTrain").setVisible(true);
     } catch (Exception ex) {
     }
   } else {
@@ -314,13 +323,18 @@ void updateButtonVisibility(boolean rec) {
       cp5.getController("drawDecision").setVisible(true);
       cp5.getController("buttonClearTest").setVisible(true);
       cp5.getController("buttonClearTrain").setVisible(false);
-      cp5.getController("buttonTrain").setVisible(false);
+     // cp5.getController("buttonTrain").setVisible(false);
     } catch (Exception ex) {
     }
   }
 }
 
 void isRecording(boolean rValue) {
+  isWaitingSingle = false;
+  errMsg = "";
   isRecording = rValue;
+  if (rValue) {
+     isDrawingBoundaries = false; 
+  }
   updateButtonVisibility(rValue);
 }
