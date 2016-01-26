@@ -40,6 +40,21 @@
 				"box" : 				{
 					"fontname" : "Geneva",
 					"fontsize" : 9.0,
+					"id" : "obj-7",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 55.5, 239.0, 138.0, 29.0 ],
+					"style" : "",
+					"text" : "Use the slider to turn up the gain!"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Geneva",
+					"fontsize" : 9.0,
 					"hidden" : 1,
 					"id" : "obj-1",
 					"maxclass" : "message",
@@ -105,7 +120,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 236.0, 633.0, 278.0, 33.0 ],
+					"patching_rect" : [ 238.0, 618.0, 278.0, 33.0 ],
 					"style" : "",
 					"text" : "Use 127.0.0.1 for localhost; can change IP if Wekinator is running on  different host."
 				}
@@ -119,7 +134,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 236.0, 611.0, 271.0, 20.0 ],
+					"patching_rect" : [ 238.0, 596.0, 271.0, 20.0 ],
 					"style" : "",
 					"text" : "Default: Send to localhost on port 6448"
 				}
