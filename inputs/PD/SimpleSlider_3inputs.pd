@@ -1,0 +1,29 @@
+#N canvas 0 23 476 360 10;
+#X msg -185 112 connect localhost 6448;
+#X obj -102 260 packOSC;
+#X obj -102 293 udpsend;
+#X obj -185 83 loadbang;
+#X obj 7 28 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 4700 1;
+#X obj 32 27 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 11200 1;
+#X obj -24 184 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 56 28 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2200 1;
+#X obj 26 200 pack f f f;
+#X msg -100 228 sendtyped /wek/inputs fff \$1 \$2 \$3;
+#X text -229 -8 This patch sends 3 inputs to wekinator on port 6448
+\, using message /wek/inputs;
+#X text 83 51 Use these sliders to change input values.;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 5 0 8 1;
+#X connect 6 0 8 0;
+#X connect 7 0 8 2;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
