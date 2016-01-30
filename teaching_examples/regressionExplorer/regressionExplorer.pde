@@ -45,7 +45,7 @@ List<Example> trainingExamples = Collections.synchronizedList(new ArrayList<Exam
 List<Example> testExamples = Collections.synchronizedList(new ArrayList<Example>());
 
 void setup() {
-  size(600, 400, P3D);
+  size(600, 400);
   background(0);
   
   //Create the font
