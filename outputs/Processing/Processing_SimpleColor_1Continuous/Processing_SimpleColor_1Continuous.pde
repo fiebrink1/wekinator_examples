@@ -1,5 +1,5 @@
-//This demo allows wekinator to control x, y, size, hue, and rotation of an object
-//All are continuous values between 0 and 1
+//This demo allows wekinator to control background color (hue)
+//This is a continuous value between 0 and 1
 
 //Necessary for OSC communication with Wekinator:
 import oscP5.*;
