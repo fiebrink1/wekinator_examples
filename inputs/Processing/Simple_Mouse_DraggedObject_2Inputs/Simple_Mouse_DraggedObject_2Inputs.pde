@@ -20,7 +20,7 @@ float xOffset = 0.0;
 float yOffset = 0.0;
 
 void setup() {
-  f = createFont("Courier", 16);
+  f = createFont("Courier", 15);
   textFont(f);
 
   size(640, 480, P2D);
