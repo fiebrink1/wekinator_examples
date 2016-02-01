@@ -1,0 +1,1 @@
+Additional OpenFrameworks input examples can be found in the audio and video input categories.
