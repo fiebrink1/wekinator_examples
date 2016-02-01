@@ -56,8 +56,8 @@ void testApp::setup(){
     ofxMaxiSettings::setup(sampleRate, 2, initialBufferSize);
     ofSoundStreamSetup(2,2, this, sampleRate, initialBufferSize, 4);/* Call this last ! */
     
-
-
+    
+    
     ofSetVerticalSync(true);
 }
 
@@ -102,7 +102,7 @@ void testApp::audioRequested 	(float * output, int bufferSize, int nChannels){
             oct.calculate(mfft.magnitudesDB);
             mfcc.mfcc(mfft.magnitudes, mfccs);
         }
-
+        
         memset(lAudioOut, 0, initialBufferSize * sizeof(float));
         memset(rAudioOut, 0, initialBufferSize * sizeof(float));
     }

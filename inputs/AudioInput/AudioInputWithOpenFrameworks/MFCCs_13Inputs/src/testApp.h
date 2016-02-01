@@ -4,7 +4,6 @@
 
 #include "ofMain.h"
 #include "ofxMaxim.h"
-#include <sys/time.h>
 
 #include "maxiMFCC.h"
 #include "ofxOsc.h"
