@@ -1,0 +1,20 @@
+{
+  "name": "web-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo index.js:bundle.js --live --open",
+    "build": "browserify index.js | uglifyjs -m -c warnings=false > bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "budo": "^8.0.2",
+    "uglify-js": "^2.6.1"
+  },
+  "dependencies": {
+    "socket.io-client": "^1.4.5"
+  }
+}
