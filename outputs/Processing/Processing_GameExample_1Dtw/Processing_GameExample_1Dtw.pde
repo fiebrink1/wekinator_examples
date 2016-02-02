@@ -1,7 +1,7 @@
 /* OpenProcessing Tweak of *@*http://www.openprocessing.org/sketch/17115*@* */
 /* !do not delete the line above, required for linking your tweak if you upload again */
 /* Modified by Rebecca Fiebrink to work with Wekinator */
-/* Receives DTW commands /left /right and /up on port 12000 */
+/* Receives DTW commands /output_1, /output_2, /output_3 (the default messages for 1st 3 gestures) on port 12000 */
 
 import oscP5.*;
 import netP5.*;
@@ -101,13 +101,13 @@ void mousePressed() {
 
 //This is called automatically when OSC message is received
 void oscEvent(OscMessage theOscMessage) {
- if (theOscMessage.checkAddrPattern("/left")==true) {
+ if (theOscMessage.checkAddrPattern("/output_1")==true) {
         goLeft();
         println("left");
- } else if (theOscMessage.checkAddrPattern("/right")==true) {
+ } else if (theOscMessage.checkAddrPattern("/output_2")==true) {
      goRight();
      println("right");
- } else if (theOscMessage.checkAddrPattern("/up") == true) {
+ } else if (theOscMessage.checkAddrPattern("/output_3") == true) {
      jump();
      println("jump");
  } else {
@@ -116,7 +116,7 @@ void oscEvent(OscMessage theOscMessage) {
 }
 
 void drawText() {
-  text( "Receives DTW commands /left /right and /up from Wekinator", 5, 15 );
+  text( "Receives /output_1 /output_2 and /output_3 (default messages) from Wekinator", 5, 15 );
   text( "Receives on port 12000", 5, 30 ); 
 }
 
