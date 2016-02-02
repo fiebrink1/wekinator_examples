@@ -1,6 +1,6 @@
-//This demo triggers a text display with each new message
+// This demo triggers a text display with each new message
 // Works with DTW
-//Set number of DTW gestures and their namesBelow
+// Set number of DTW gestures and their namesBelow
 
 //Necessary for OSC communication with Wekinator:
 import oscP5.*;
@@ -10,8 +10,7 @@ import ddf.minim.ugens.*;
 OscP5 oscP5;
 NetAddress dest;
 
-//TODO: SET THESE VALUES!
-String[] messageNames = {"/outputs-1_1", "/outputs-1_2", "/outputs-1_3","/outputs-1_4","/outputs-1_5" }; //message names for each DTW gesture type
+String[] messageNames = {"/output_1", "/output_2", "/output_3","/output_4","/output_5" }; //message names for each DTW gesture type
 
 //No need to edit:
 PFont myFont, myBigFont;
@@ -31,6 +30,7 @@ AudioOutput out;
 Oscil       wave;
 
 void setup() {
+  size(600, 400);
   numClasses = messageNames.length;
   hues = new int[numClasses];
   textHues = new int[numClasses];
@@ -125,4 +125,3 @@ float generateColor(int which) {
      return (generateColor(which-1) + 1.61*255) %255; 
   }
 }
-
