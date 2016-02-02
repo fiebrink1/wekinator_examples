@@ -24,7 +24,9 @@ int currentTextHue = 255;
 String currentMessage = "Waiting...";
 
 void setup() {
-  size(400, 400);
+  colorMode(HSB);
+  size(myWidth,myHeight, P3D);
+  smooth();
   numClasses = messageNames.length;
   hues = new int[numClasses];
   textHues = new int[numClasses];
@@ -37,12 +39,7 @@ void setup() {
   //Initialize OSC communication
   oscP5 = new OscP5(this,12000); //listen for OSC messages on port 12000 (Wekinator default)
   dest = new NetAddress("127.0.0.1",6448); //send messages back to Wekinator on port 6448, localhost (this machine) (default)
-  
-  colorMode(HSB);
-  size(myWidth,myHeight, P3D);
-  smooth();
-  background(255);
-  
+    
   String typeTag = "f";
   for (int i = 1; i < numClasses; i++) {
     typeTag += "f";
@@ -50,6 +47,7 @@ void setup() {
   //myFont = loadFont("SansSerif-14.vlw");
   myFont = createFont("Arial", 14);
   myBigFont = createFont("Arial", 60);
+  println("*******");
 }
 
 void draw() {
