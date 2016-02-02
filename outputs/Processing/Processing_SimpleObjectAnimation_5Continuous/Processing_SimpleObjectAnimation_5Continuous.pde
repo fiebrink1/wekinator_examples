@@ -92,7 +92,8 @@ void drawtext() {
     textAlign(LEFT, TOP); 
     fill(0, 0, 255);
 
-    text("5 continuous parameters, all in range 0 to 1:", 10, 10);
-    text("   x, y, size, hue, rotation" , 10, 25);
+    text("Listening for message /wek/inputs on port 12000", 10, 10);
+    text("Expecting 5 continuous numeric outputs, all in range 0 to 1:", 10, 25);
+    text("   x, y, size, hue, rotation" , 10, 40);
 }
 

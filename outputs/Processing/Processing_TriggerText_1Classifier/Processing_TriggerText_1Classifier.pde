@@ -67,7 +67,7 @@ void drawText() {
     fill(currentTextHue, 255, 255);
 
     text("Receives 1 classifier output message from wekinator", 10, 10);
-    text("Listening for 1 classes, OSC message /wek/outputs", 10, 30);
+    text("Listening for OSC message /wek/outputs, port 12000", 10, 30);
     
     textFont(myBigFont);
     text(currentMessage, 190, 180);
