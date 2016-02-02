@@ -1,3 +1,7 @@
+//Use with IFTTT to trigger events
+//See https://ifttt.com/maker for more info
+// Paste your tigger URL below in mouseClicked() 
+
 import processing.net.*;
 
 Client c;
@@ -14,8 +18,7 @@ void draw() {
 } 
 
 void mouseClicked() {
-   println("HI");
-   String lines[] = loadStrings("https://maker.ifttt.com/trigger/wekinator1/with/key/cEFbkp_LMv6kHzszA0VRg3");
+   String lines[] = loadStrings("https://maker.ifttt.com/trigger/YOUR_URL_INFO_HERE");
    println("there are " + lines.length + " lines");
    for (int i = 0 ; i < lines.length; i++) {
       println(lines[i]);
