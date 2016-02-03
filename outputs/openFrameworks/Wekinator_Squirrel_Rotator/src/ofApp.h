@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofx3DModelLoader.h"
+#include "ofxAssimpModelLoader.h"
 #include "ofxOsc.h"
 
 // listen on port 12000
@@ -26,7 +26,7 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    ofx3DModelLoader squirrelModel;
+    ofxAssimpModelLoader squirrelModel;
     
     ofxOscReceiver receiver;
     float vx, vy;
