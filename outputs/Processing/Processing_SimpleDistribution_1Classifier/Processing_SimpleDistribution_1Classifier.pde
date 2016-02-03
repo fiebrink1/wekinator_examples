@@ -80,7 +80,7 @@ void drawText() {
     text("Receives probability distribution from Wekinator", 10, 10);
    // String s= 
    text("Listening for " + numClasses + " classes, OSC message " + messageName, 10, 30);
-   text("(Edit code to change)", 10, 50); 
+   text("(You will have to turn this message on:\n edit model output type in Wekinator)", 10, 50); 
 }
 
 void drawDist() {
