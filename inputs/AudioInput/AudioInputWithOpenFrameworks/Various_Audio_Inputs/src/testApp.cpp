@@ -92,7 +92,7 @@ void testApp::update(){
     if (fftToggle) {
        // cout << "FFT" << endl;
         //m.setAddress("/fft");
-        for (int i = 0; i < fftSize; i++) {
+        for (int i = 0; i < fftSize/2; i++) {
             m.addFloatArg(mfft.magnitudes[i]);
             
         }
