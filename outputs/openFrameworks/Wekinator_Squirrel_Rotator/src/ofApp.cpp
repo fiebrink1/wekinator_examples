@@ -121,7 +121,7 @@ void ofApp::draw(){
     glTranslatef(-ofGetWidth()/2,-ofGetHeight()/2,0);
     
     ofSetColor(255, 255, 255, 255);
-    squirrelModel.draw();
+    squirrelModel.draw(OF_MESH_FILL);
     
     glPopMatrix();
     
