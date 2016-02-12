@@ -1,0 +1,1 @@
+python-osc==1.5
