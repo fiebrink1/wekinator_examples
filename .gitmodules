@@ -1,0 +1,3 @@
+[submodule "inputs/LeapMotion/LeapMotionViaPython/leap_python3"]
+	path = inputs/LeapMotion/LeapMotionViaPython/leap_python3
+	url = https://github.com/Nagasaki45/leap_python3.git

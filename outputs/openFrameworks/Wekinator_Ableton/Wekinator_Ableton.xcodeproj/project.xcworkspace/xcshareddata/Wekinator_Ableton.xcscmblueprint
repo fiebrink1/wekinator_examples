@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "39642EB9A7960140EE36619E322E5815FF36D10C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6312B7038589401E7479B6C0597D1304EB8371F6" : 0,
+    "39642EB9A7960140EE36619E322E5815FF36D10C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D89C69B3-CB85-4C5D-AEDC-2783ACE80741",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6312B7038589401E7479B6C0597D1304EB8371F6" : "ofxControl\/",
+    "39642EB9A7960140EE36619E322E5815FF36D10C" : "ofxAbletonLive\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Wekinator_Ableton",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Wekinator_Ableton\/Wekinator_Ableton.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/genekogan\/ofxAbletonLive.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "39642EB9A7960140EE36619E322E5815FF36D10C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/genekogan\/ofxControl.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6312B7038589401E7479B6C0597D1304EB8371F6"
+    }
+  ]
+}
