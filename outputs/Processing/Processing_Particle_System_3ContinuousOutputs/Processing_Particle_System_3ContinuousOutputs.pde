@@ -4,6 +4,8 @@
 // http://natureofcode.com
 // Released under LGPL 2.1 license: http://creativecommons.org/licenses/LGPL/2.1/
 // Modified by Rebecca Fiebrink to accept control data from Wekinator
+// Receives 3 continuous (regression) values, in range 0-1
+// Listens on port 12000
 
 // Array of Images for particle textures
 

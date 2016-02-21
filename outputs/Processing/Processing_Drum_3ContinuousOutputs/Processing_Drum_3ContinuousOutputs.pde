@@ -3,6 +3,8 @@ import processing.opengl.*;
 /**
   * This is a modification of an example from Minim package
   * Modified by Rebecca Fiebrink to work with Wekinator
+  * This version takes 3 continuous outputs from Wekinator, each expected in range 0-1
+  * Listens on port 12000
   * Original header:
   * This sketch is a more involved use of AudioSamples to create a simple drum machine. 
   * Click on the buttons to toggle them on and off. The buttons that are on will trigger 
