@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 98.0, 79.0, 724.0, 675.0 ],
+		"rect" : [ 98.0, 79.0, 1306.0, 728.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -105,7 +105,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 169.0, 465.0, 232.0, 20.0 ],
+					"patching_rect" : [ 173.0, 429.0, 232.0, 20.0 ],
 					"style" : "",
 					"text" : "Send features to Wekinator"
 				}
@@ -145,12 +145,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-142",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 192.0, 500.0, 223.0, 20.0 ],
+					"patching_rect" : [ 200.0, 498.0, 274.0, 33.0 ],
 					"style" : "",
-					"text" : "Note that this outputs a vector of floats."
+					"text" : "Normalize to range (0,1). Note that this outputs a vector of floats."
 				}
 
 			}
@@ -186,6 +187,7 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-135",
@@ -193,9 +195,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 100.0, 436.0, 57.0, 22.0 ],
+					"patching_rect" : [ 100.0, 436.0, 43.0, 22.0 ],
 					"style" : "",
-					"text" : "zl sort -1"
+					"text" : "zl sort"
 				}
 
 			}
