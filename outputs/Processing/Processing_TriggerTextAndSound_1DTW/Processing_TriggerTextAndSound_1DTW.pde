@@ -30,8 +30,8 @@ AudioOutput out;
 Oscil       wave;
 
 void setup() {
-    colorMode(HSB);
-  size(myWidth,myHeight, P3D);
+  colorMode(HSB);
+  size(400,400, P3D);
   smooth();
   numClasses = messageNames.length;
   hues = new int[numClasses];

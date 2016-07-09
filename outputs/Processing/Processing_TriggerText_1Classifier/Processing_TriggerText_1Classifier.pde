@@ -24,7 +24,7 @@ void setup() {
   dest = new NetAddress("127.0.0.1",6448); //send messages back to Wekinator on port 6448, localhost (this machine) (default)
   
   colorMode(HSB);
-  size(myWidth,myHeight, P3D);
+  size(400,400, P3D);
   smooth();
   background(255);
   
@@ -84,4 +84,3 @@ float generateColor(int which) {
      return (generateColor(which-1) + 1.61*255) %255; 
   }
 }
-
