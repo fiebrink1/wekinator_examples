@@ -3,13 +3,13 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 7,
-			"minor" : 0,
-			"revision" : 1,
+			"minor" : 3,
+			"revision" : 4,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 290.0, 111.0, 843.0, 569.0 ],
+		"rect" : [ 217.0, 78.0, 843.0, 569.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -97,13 +97,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-10",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 172.0, 448.0, 362.0, 47.0 ],
+					"patching_rect" : [ 172.0, 448.0, 470.0, 33.0 ],
 					"style" : "",
-					"text" : "127.0.0.1 is same as localhost (i.e., this machine); you can change the host IP address if Wekinator is running on a different host."
+					"text" : "You can change the host IP address from localhost if Wekinator is running on a different host."
 				}
 
 			}
@@ -116,9 +116,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 172.0, 413.0, 362.0, 33.0 ],
+					"patching_rect" : [ 172.0, 413.0, 439.0, 33.0 ],
 					"style" : "",
-					"text" : "127.0.0.1 is the host and 6448 is the port here. These are good defaults. "
+					"text" : "localhost means you're sending to Wekinator running on the same machine as this Max patch, and 6448 is the port you're sending to. These are good defaults. "
 				}
 
 			}
@@ -220,36 +220,6 @@
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-82",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 29.0, 322.0, 33.0, 22.0 ],
-					"style" : "",
-					"text" : "t b s"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-77",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "OSCTimeTag" ],
-					"patching_rect" : [ 29.0, 367.0, 143.0, 22.0 ],
-					"style" : "",
-					"text" : "OpenSoundControl 2000"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -287,9 +257,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 29.0, 412.0, 140.0, 22.0 ],
+					"patching_rect" : [ 29.0, 412.0, 137.0, 22.0 ],
 					"style" : "",
-					"text" : "udpsend 127.0.0.1 6448"
+					"text" : "udpsend localhost 6448"
 				}
 
 			}
@@ -297,8 +267,6 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-58", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -306,8 +274,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-58", 1 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-17", 0 ]
 				}
 
@@ -315,8 +281,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-58", 2 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-18", 0 ]
 				}
 
@@ -324,8 +288,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-53", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 555.5, 399.0, 38.5, 399.0 ],
 					"source" : [ "obj-2", 0 ]
 				}
@@ -334,8 +296,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-74", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 38.5, 282.0, 38.5, 282.0 ],
 					"source" : [ "obj-58", 0 ]
 				}
@@ -344,18 +304,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-7", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-82", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"midpoints" : [ 38.5, 310.0, 38.5, 310.0 ],
+					"destination" : [ "obj-11", 0 ],
+					"order" : 0,
 					"source" : [ "obj-74", 0 ]
 				}
 
@@ -363,49 +319,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-53", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"midpoints" : [ 38.5, 388.0, 38.5, 388.0 ],
-					"source" : [ "obj-77", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-82", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-77", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"midpoints" : [ 52.5, 352.0, 38.5, 352.0 ],
-					"source" : [ "obj-82", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-77", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"midpoints" : [ 38.5, 343.0, 38.5, 343.0 ],
-					"source" : [ "obj-82", 0 ]
+					"order" : 1,
+					"source" : [ "obj-74", 0 ]
 				}
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "OpenSoundControl.mxo",
-				"type" : "iLaX"
-			}
- ],
-		"embedsnapshot" : 0
+		"dependency_cache" : [  ],
+		"autosave" : 0
 	}
 
 }
