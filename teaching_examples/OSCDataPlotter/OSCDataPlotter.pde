@@ -1,8 +1,9 @@
-// Code by Rebecca Fiebrink, 24 October 2017
+// Code by Rebecca Fiebrink, updated 14 November 2017
 // Please share only with attribution
 // Plots incoming OSC data
 // Adapts to number of channels and scale of each channel
-// By default this listens on port 6448 but you can change that below
+// Optionally also sends the received OSC messages on to another port.
+// By default this listens on port 6448 and sends to port 6449, but you can change that below
 
 //Necessary for OSC communication with Wekinator:
 import oscP5.*;
@@ -10,8 +11,20 @@ import netP5.*;
 OscP5 oscP5;
 NetAddress dest;
 
+//******Change the following variables to alter OSC and drawing behaviour: **********//
+
+int receiveDataOnOSCPort = 6448; 
+//If you want to use this to monitor features usually sento to Wekinator, receiveDataOnOSCPort should be 6448
+//Or, if you want to use this to monitor output from Wekinator, receiveDataOnOSCPort should be 12000
+
+boolean sendReceivedFeaturesToAnotherPort = true; //True if you want to forward on your features somewhere else (e.g., to Wekinator)
+int sendReceivedDataToPort = 6449; // Port to forward messages to
+
 //Number of datapoints per row to display: You may want to adjust this
 int pointsPerRow = 100;
+
+
+//******Probably no need to edit below this line **********//
 
 //Vertical gap between plots
 int vertGap = 10;
@@ -23,8 +36,8 @@ void setup()  {
   size(600, 400);
   
   //Initialize OSC communication
-  oscP5 = new OscP5(this,6448); //listen for OSC messages on port 6448 (Wekinator output default)
-  dest = new NetAddress("127.0.0.1",9000); //This line doesn't matter (we're not sending any OSC)
+  oscP5 = new OscP5(this,receiveDataOnOSCPort); //listen for incoming OSC messages
+  dest = new NetAddress("127.0.0.1",sendReceivedDataToPort); //Set up sender to send to desired port
 
   //Create a single plot for starters
   Plot p = new Plot(width-20, height-20, pointsPerRow, 10, 10);
@@ -67,6 +80,9 @@ void oscEvent(OscMessage theOscMessage) {
        float nextFloat = theOscMessage.get(i).floatValue();
        plots.get(i).addPoint(nextFloat); 
      }
+     if (sendReceivedFeaturesToAnotherPort) {
+       resendOsc(theOscMessage);
+     }
 }
 
 void resizePlots() {
@@ -78,4 +94,10 @@ void resizePlots() {
        num++;
       }
     }
+}
+
+//Resends OSC message elsewhere
+void resendOsc(OscMessage theMessage) {
+  OscMessage msg = new OscMessage(theMessage.addrPattern(), theMessage.arguments());
+  oscP5.send(msg, dest);
 }
