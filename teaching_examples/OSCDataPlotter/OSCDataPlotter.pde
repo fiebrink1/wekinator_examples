@@ -1,9 +1,14 @@
-// Code by Rebecca Fiebrink, updated 14 November 2017
+// Code by Rebecca Fiebrink, updated 15 November 2017
 // Please share only with attribution
 // Plots incoming OSC data
 // Adapts to number of channels and scale of each channel
 // Optionally also sends the received OSC messages on to another port.
 // By default this listens on port 6448 and sends to port 6449, but you can change that below
+// You will need to add the oscP5 and controlP5 libraries to Processing if you haven't already
+
+
+//For the GUI elements
+import controlP5.*;
 
 //Necessary for OSC communication with Wekinator:
 import oscP5.*;
@@ -26,11 +31,20 @@ int pointsPerRow = 100;
 
 //******Probably no need to edit below this line **********//
 
+//Gap at top of screen
+int topGap = 30;
+
 //Vertical gap between plots
 int vertGap = 10;
 
 //Store a list of all plot rows, and adapt size according to incoming OSC messages
 ArrayList<Plot> plots = new ArrayList<Plot>(1);
+
+//GUI:
+ControlP5 cp5;
+
+//Pause:
+boolean isPaused = false;
 
 void setup()  {
   size(600, 400);
@@ -39,14 +53,33 @@ void setup()  {
   oscP5 = new OscP5(this,receiveDataOnOSCPort); //listen for incoming OSC messages
   dest = new NetAddress("127.0.0.1",sendReceivedDataToPort); //Set up sender to send to desired port
 
+  //Add toggle for sending OSC data out
+  cp5 = new ControlP5(this);
+  cp5.addToggle("sendReceivedFeaturesToAnotherPort")
+     .setPosition(385,10)
+     .setSize(15,15)
+     .setValue(true)
+     .setLabel("")
+     .setColorActive( color(0, 255, 0)) 
+     ;
+     
+   cp5.addToggle("isPaused")
+     .setPosition(210,10)
+     .setSize(15,15)
+     .setValue(false)
+     .setLabel("")
+     .setColorActive( color(255, 0, 0)) 
+     ;
+
   //Create a single plot for starters
-  Plot p = new Plot(width-20, height-20, pointsPerRow, 10, 10);
+  Plot p = new Plot(width-20, height-topGap - 10, pointsPerRow, 10, topGap);
   plots.add(p);
 }
 
 void draw() {
   stroke(0);
   background(255);
+  writeText();
   
   //Synchronized keeps us from changing and reading the ArrayList at the same time in separate threads
   synchronized(this) {
@@ -58,6 +91,15 @@ void draw() {
 
 //This is called automatically when OSC message is received
 void oscEvent(OscMessage theOscMessage) {
+     
+     if (sendReceivedFeaturesToAnotherPort) {
+       resendOsc(theOscMessage);
+     }
+     
+     if (isPaused) {
+       return;
+     }
+  
      Object[] arguments = theOscMessage.arguments();
      
      //Has our number of data channels changed? If so, add/remove plots.
@@ -80,17 +122,15 @@ void oscEvent(OscMessage theOscMessage) {
        float nextFloat = theOscMessage.get(i).floatValue();
        plots.get(i).addPoint(nextFloat); 
      }
-     if (sendReceivedFeaturesToAnotherPort) {
-       resendOsc(theOscMessage);
-     }
+
 }
 
 void resizePlots() {
-    int totalPlotHeight = height / plots.size();
+    int totalPlotHeight = (height - topGap) / plots.size();
     int num = 0;
     synchronized(this) {
       for (Plot p : plots) {
-       p.resize(width - 10, totalPlotHeight-vertGap, 0, num*totalPlotHeight);
+       p.resize(width - 10, totalPlotHeight-vertGap, 0, topGap + num*totalPlotHeight);
        num++;
       }
     }
@@ -100,4 +140,19 @@ void resizePlots() {
 void resendOsc(OscMessage theMessage) {
   OscMessage msg = new OscMessage(theMessage.addrPattern(), theMessage.arguments());
   oscP5.send(msg, dest);
+}
+
+void writeText() {
+  fill(0);
+  textSize(10);
+  textAlign(RIGHT);
+  text("RE-SEND OSC:", 380, 20);
+  text("PAUSE:", 205, 20);
+  
+  textAlign(LEFT);
+  text("Receiving OSC on port " + receiveDataOnOSCPort, 20, 20);
+  if (sendReceivedFeaturesToAnotherPort) {
+       text("re-sending to port " + sendReceivedDataToPort, 410, 20);
+
+  }
 }
