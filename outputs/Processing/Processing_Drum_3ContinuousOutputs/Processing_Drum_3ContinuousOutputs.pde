@@ -103,10 +103,10 @@ class Rect
   
   public void mousePressed()
   {
-    if ( mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h )
+    /*if ( mouseX >= x && mouseX <= x+w && mouseY >= y && mouseY <= y+h )
     {
       steps[stepId] = !steps[stepId];
-    }
+    } */
   }
   
  /* public void turnOn() {
@@ -182,6 +182,7 @@ void draw()
   fill(0, 255, 0);
   text( "Use 3 continuous Wekinator outputs between 0 and 1", 5, 15 );
   text( "Listening for /wek/outputs on port 12000", 5, 30 );
+  text("Use sliders in Wekinator to control density of each track", 5, 45 );
 }
 
 void mousePressed()
